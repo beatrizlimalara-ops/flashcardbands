@@ -1,0 +1,244 @@
+/* ==========================================================================
+   ESTILO HEAVY METAL / ROCK - VERSÃO ULTRA BLINDADA (SEM QUEBRAS)
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #08080a;
+    background-image: linear-gradient(rgba(10, 10, 12, 0.96), rgba(5, 5, 6, 0.99));
+    font-family: 'Impact', 'Arial Black', sans-serif;
+}
+
+/* ==========================================================================
+   CABEÇALHO (HEADER)
+   ========================================================================== */
+.cabecalho {
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0d0d11;
+    border-bottom: 4px solid #660000;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.9);
+    position: relative;
+}
+
+.cabecalho::before { 
+    content: "🦇"; 
+    position: absolute; 
+    left: 10px; 
+    opacity: 0.4; 
+    font-size: 20px; 
+}
+
+h1 {
+    color: #eeeeee;
+    font-family: 'Impact', sans-serif;
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 3px 3px 0px #330000, 0 0 10px rgba(255, 0, 0, 0.3);
+}
+
+.cabecalho-link {
+    color: #666666;
+    text-decoration: none;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px dashed #444;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+}
+
+.cabecalho-link:hover {
+    color: #ff0000;
+    border-color: #ff0000;
+    text-shadow: 0 0 5px #ff0000;
+}
+
+/* ==========================================================================
+   CONTEÚDO PRINCIPAL (MAIN)
+   ========================================================================== */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+}
+
+main h2 {
+    margin-bottom: 40px;
+    color: #55555c;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+main h2::before { content: "🦇 "; }
+main h2::after { content: " 🦇"; }
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px; 
+    justify-content: center;
+    max-width: 1200px; 
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* ==========================================================================
+   FLASHCARDS (ESTRUTURA 3D ESTÁVEL)
+   ========================================================================== */
+.cartao {
+    width: 280px;
+    height: 400px; 
+    position: relative;
+    perspective: 1000px; /* Base do ambiente 3D */
+}
+
+.cartao-interno {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); 
+    transform-style: preserve-3d;
+}
+
+/* Trigger estável de rotação */
+.cartao:hover .cartao-interno {
+    transform: rotateY(180deg);
+}
+
+/* Força as duas faces a terem tamanhos idênticos e fixos */
+.cartao-frente, .cartao-verso {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px; 
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    backface-visibility: hidden; /* Esconde a face oposta perfeitamente */
+}
+
+/* Adiciona a caveira fixa no topo direito */
+.cartao-frente::before, .cartao-verso::before {
+    content: "💀";
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 14px;
+    z-index: 10;
+    opacity: 0.6;
+    filter: drop-shadow(0 0 2px #000);
+}
+
+/* FRENTE */
+.cartao-frente {
+    background-color: #0f0f12;
+    border: 2px solid #222226;
+    border-top: 4px solid #44444a;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
+    transform: rotateY(0deg); /* Trava a posição inicial */
+    z-index: 2;
+}
+
+/* VERSO */
+.cartao-verso {
+    background-color: #0d0d10;
+    border: 2px solid #880000;
+    border-top: 4px solid #ff0000;
+    box-shadow: 0 0 25px rgba(136, 0, 0, 0.4);
+    transform: rotateY(180deg); /* Trava a posição invertida */
+}
+
+/* ==========================================================================
+   FOTOS E TEXTOS (Tamanhos proporcionais controlados)
+   ========================================================================== */
+.cartao-imagem {
+    width: 100%;
+    height: 45%; /* Fixa a imagem em exatamente 45% da altura do card */
+    object-fit: cover;
+    display: block;
+    filter: grayscale(90%) contrast(140%) brightness(80%);
+    border-bottom: 3px double #222;
+}
+
+.cartao-frente p, .cartao-verso p {
+    height: 55%; /* O texto assume exatamente o restante do card */
+    padding: 15px; 
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 13.5px; /* Tamanho ligeiramente reduzido para garantir que caiba */
+    line-height: 1.4;
+    font-style: italic;
+    letter-spacing: 0.5px;
+    overflow: hidden; /* Impede qualquer texto de empurrar o layout */
+}
+
+.cartao-frente p {
+    color: #b0b0b8;
+    background: linear-gradient(180deg, #0f0f12 0%, #15151a 100%);
+}
+
+.cartao-verso p {
+    color: #ffffff;
+    background: linear-gradient(180deg, #0f0f12 0%, #08080a 100%);
+    text-shadow: 1px 1px 2px #000; 
+    flex-direction: column; /* Permite organizar o MITO/VERDADE em blocos */
+}
+
+/* Destaque para MITO e VERDADE */
+.cartao-verso p::first-line {
+    font-family: 'Impact', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    letter-spacing: 2px;
+    color: #ff1a1a;
+    text-shadow: 2px 2px 4px #000, 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+/* ==========================================================================
+   RODAPÉ (FOOTER)
+   ========================================================================== */
+footer {
+    background-color: #050507;
+    padding: 30px;
+    border-top: 2px dashed #15151a;
+    text-align: center;
+}
+
+footer::after {
+    content: "💀";
+    font-size: 18px;
+    opacity: 0.2;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 1200px) {
+    section { max-width: 650px; }
+}
+
+@media (max-width: 650px) {
+    section { max-width: 320px; gap: 20px; }
+    .cartao { width: 100%; height: 400px; } 
+}
