@@ -147,12 +147,12 @@ section {
     filter: drop-shadow(0 0 2px #000);
 }
 
-/* FRENTE */
+/* FRENTE CORRIGIDA - BORDA VERMELHA E BRILHOSA FIXA */
 .cartao-frente {
     background-color: #0f0f12;
-    border: 2px solid #222226;
-    border-top: 4px solid #44444a;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
+    border: 2px solid #ff0000;
+    border-top: 4px solid #ff0000;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6), inset 0 0 10px rgba(255, 0, 0, 0.2);
     transform: rotateY(0deg); /* Trava a posição inicial */
     z-index: 2;
 }
